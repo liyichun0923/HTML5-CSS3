@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px auto;
+            padding: 0px;
+        }
+        #fd{
+            width: 556px;
+            height: 390px;
+        }
+        #fs{
+            width:495px; 
+            height: 115px;
+        }
+        #fs1{
+            width: 495px;
+            height: 95px;
+        }
+    </style>
+</head>
+<body>
+    <form id="fd">
+        <h1>毕业生信息</h1>
+        <fieldset id="fs" name="f1">
+            <legend style="color:brown;">学生信息</legend>
+                姓名<input type="text" name="name" placeholder="请输入姓名" autofocus required/>
+                <span style="color:brown">*</span>
+                <br/>
+                学号<input type="number" name="number" placeholder="请输入学号" required/>
+                <span style="color:brown">*</span>
+                <br/>
+                手机<input type="tel" name="tel" placeholder="请输入手机号" required/>
+                <span style="color:brown">*</span>
+                <br/>
+                邮箱<input type="Email" name="email" placeholder="请输入邮箱地址" required/>
+                <span style="color:brown">*</span>
+                <br/>
+        </fieldset>
+        
+        <br/>
+
+        <fieldset id="fs1" name="f2">
+            <legend style="color:brown;">录取情况</legend>
+                录取学校<input type="text" name="school"/>
+                <br/>
+                入学成绩<input type="text" name="grade"/>
+                <br/>
+                入学时间<input type="date" name="date"/>
+        </fieldset>
+        <br/>
+        <input type="submit"/>
+    </form>
+</body>
+</html>
