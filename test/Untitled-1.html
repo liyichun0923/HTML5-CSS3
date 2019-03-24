@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>web存储-作业</title>
+</head>
+<style>
+    #dakuang{
+        width: 400px;
+        height: 250px;
+    }
+    #search{
+        height: 38px;
+        width: 194px;
+        border-color: #fbc880;
+    }
+    #button{
+        height: 38px;
+        width: 140px;
+    }
+    #history{
+        width: 360px;
+        height: 130px;
+        float: left;
+    }
+    #yichun{
+        float:left; 
+        margin-right:10px; 
+        background-color:#e0e0e0; 
+        border:solid; 
+        border-color:#cccccc; 
+        border-width:1px;
+    }
+    #chahao{
+        height: 130px;
+        width: 40px;
+        float: left;
+    }
+</style>
+<body>
+    <div id="dakuang">
+        <form style="width:403px; height:46px;">
+            <input type="text" name="search" placeholder="请输入想查找的商品" id="search" required />
+            <input type="button" value="搜索" name="button" id="button" onclick="saveStorage('search');">
+        </form>
+        <div>最近搜索</div>
+        <br/>
+        <div style="height:130px; width: 400px;">
+            <div id="history">
+                <p style="text-align:center;">此处显示您的搜索记录</p>
+            </div>
+            <div id="chahao">
+                <img src="1.png" style="padding-top: 35px; width:28px; height:28px;" onclick="clearStorage('history');"/>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+
+    function saveStorage(id) {
+        var a = document.getElementById(id);
+        var data = a.value;
+        var time = new Date().getTime();
+        localStorage.setItem(time, data);
+        loadStorage('history');
+    }
+
+    function loadStorage(id) {
+        var target = document.getElementById(id);
+        var result = '<div>';
+        for (var i = 0; i < localStorage.length; i++) {
+                var key = localStorage.key(i);
+                var value = localStorage.getItem(key);
+                var date = new Date();
+                date.setTime(key); 
+                result +='<div id="yichun">'+value+'</div>';
+        }
+        result += '</div>';
+        target.innerHTML = result;
+    }
+
+    function clearStorage() {
+        var last = document.getElementById('history');
+        localStorage.clear();
+        loadStorage('history');
+        last.innerHTML = '<p style="text-align:center;">'+"您已清空历史记录"+'</p>';
+    }
+</script>
+</html>
