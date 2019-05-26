@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        #box{
+            margin-top: 40px;
+            margin-left: 100px;
+            width: 370px; 
+            height: 420px; 
+            border:solid; 
+            border-color: #d0cdcd; 
+            border-width: 3px;
+            position: relative;
+        }
+        #text{
+            width: 370px;
+            height: 100px;
+            background-color: white;
+            top:245px;
+            position: absolute;
+        }
+        .wenzi{
+            margin:0px 15px 0px 15px; 
+            line-height: 1.8em;
+            color: #656565;
+            opacity: 0;
+        }
+        #yejiao{
+            top: 400px; 
+            padding-left: 15px;
+            font-size: 12px;
+            color: #7d7f7d;
+            position: absolute;
+        }
+        .tupian{
+            width: 370px;
+            height: 245px;
+            background-color: black;
+            overflow:hidden;
+        }
+        #img1{
+            width: 370px;
+            height: 245px;
+        }
+        .yuan{
+            position: absolute;
+            left: 300px;
+            top: 20px;
+        }
+        .zi{
+            color: white;
+            font-size: 10px;
+            padding-left: 13px;
+            padding-top: 6px;
+            font-weight: bold;
+        }
+        .jiaojiao{
+            position: absolute;
+            top:225px;
+            width: 50px;
+            height: 20px;
+            background-color: #fd7546;
+            text-align: center;
+            color: white;
+            font-size: 11px;
+        }
+		#box:hover #text{
+            height: 240px;
+		    top: 140px;
+            transition: top .5s linear .1s,height .5s linear .1s;
+		}
+        #box:hover #img1{
+            opacity: 0.6;
+            transform: scale(1.2,1.2);
+            transition: transform .5s linear .1s,width .5s linear .1s,height .5s linear .1s,opacity .5s linear .1s;
+        }
+        #box:hover .wenzi{
+            opacity: 1;
+            transition: opacity .5s linear .3s;
+        }
+        #box:hover .jiaojiao{
+            top:120px;
+            transition: top .5s linear .1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="tupian">
+            <img src="1.jpg" id="img1"/>
+        </div>
+        <div id="text">
+            <p style="font-size:22px; font-weight: bold; margin-left: 15px; margin-top: 15px; margin-bottom: 15px;">青岛栈桥</p>
+            <p style="font-size:18px; color:#fd7546; margin-left: 15px; margin-bottom: 0px; margin-top: 0px;">国家AAAA级旅游景区</p>
+            <p class="wenzi">
+                青岛栈桥是青岛海滨风景区的景点之一，是国务院于1982年首批公布的国家级风景名胜区。青岛栈桥位于游人如织的青岛中山路南段，桥身从海岸探入如弯月般的青岛湾深处，桥身供游人参观并在此停靠旅游船，由此乘船可看海上青岛。
+            </p>
+        </div>
+        <div id="yejiao">10分钟前&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;123评论</div>
+        <div class="yuan">
+            <canvas id="canvas" width="45px" height="45px"></canvas>
+        </div>
+        <div class="yuan zi">
+            &nbsp;15</br>5月
+        </div>
+        <div class="jiaojiao">照片</div>
+    </div>
+</body>
+<script>
+    var elem=document.getElementById('canvas');
+    var context=elem.getContext('2d');
+    context.arc(22.5,22.5,22.5,0,2*Math.PI);
+    context.fillStyle = "#fd7546";
+    context.fill();
+</script>
+</html>
